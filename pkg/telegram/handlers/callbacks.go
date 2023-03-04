@@ -39,7 +39,7 @@ func handlePurscase(bot *tgbotapi.BotAPI, update tgbotapi.Update) {
 	result := qiwi.CreateBill()
 	bot.Send(prevMessage)
 	var buttons = []tgbotapi.InlineKeyboardButton{
-		tgbotapi.NewInlineKeyboardButtonURL("Ссылка для оплаты💸", result.PayUrl),
+		tgbotapi.NewInlineKeyboardButtonURL("Оплатить💸", result.PayUrl),
 		tgbotapi.NewInlineKeyboardButtonData("Назад⮑", "back"),
 	}
 	oldMarkup = *update.CallbackQuery.Message.ReplyMarkup
